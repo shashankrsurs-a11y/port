@@ -5,7 +5,7 @@ import { skills, languages } from "../data/content";
 export function Skills() {
   return (
     <Section id="skills" eyebrow="Capabilities" title="The range, at a glance." alt>
-      <div className="grid md:grid-cols-3 gap-14">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-14">
         {Object.entries(skills).map(([group, items], i) => (
           <Reveal key={group} delay={i * 0.1}>
             <p className="font-label text-xs uppercase tracking-[0.14em] text-gold mb-5">

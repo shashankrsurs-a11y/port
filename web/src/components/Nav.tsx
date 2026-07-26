@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { profile } from "../data/content";
 
 const LINKS = [
   { href: "#work", label: "Film Work" },
@@ -35,6 +36,15 @@ export function Nav() {
               </a>
             </li>
           ))}
+          <li>
+            <a
+              href={profile.resumeUrl}
+              download
+              className="link-underline hover:text-ivory transition-colors text-gold"
+            >
+              Résumé
+            </a>
+          </li>
         </ul>
       </nav>
     </header>

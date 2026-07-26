@@ -27,7 +27,8 @@ export function Awards() {
         <blockquote className="max-w-2xl mx-auto text-center py-10">
           <hr className="rule w-16 mx-auto mb-8" style={{ background: "var(--color-gold)" }} />
           <p className="font-display italic text-2xl md:text-3xl text-ivory leading-snug">
-            &ldquo;Recognized for its long-take execution by the editor of Laapataa Ladies.&rdquo;
+            &ldquo;Recognised by the editorial team of Laapataa Ladies — for the 48-hour
+            competition film, and for script analysis and coverage work during film school.&rdquo;
           </p>
         </blockquote>
       </Reveal>
@@ -40,14 +41,33 @@ export function Awards() {
         <div className="grid md:grid-cols-3 gap-8">
           {research.map((r, i) => (
             <Reveal key={r.title} delay={i * 0.08}>
-              <div className="border-l border-hairline pl-5">
+              <div className="border-l border-hairline pl-5 h-full flex flex-col">
                 <p className="font-label text-[10px] uppercase tracking-[0.14em] text-stone mb-2">
                   {r.type}
                 </p>
-                <h4 className="font-display text-xl leading-snug mb-3">{r.title}</h4>
-                <span className="font-label text-xs uppercase tracking-[0.12em] text-gold link-underline cursor-pointer">
-                  Read
-                </span>
+                <h4 className="font-display text-xl leading-snug">{r.title}</h4>
+                {r.subtitle && (
+                  <p className="font-display italic text-sm text-stone/90 mt-1 mb-3">
+                    {r.subtitle}
+                  </p>
+                )}
+                <p className="font-body text-sm text-stone leading-relaxed mb-4 flex-1">
+                  {r.description}
+                </p>
+                {r.file ? (
+                  <a
+                    href={r.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-label text-xs uppercase tracking-[0.12em] text-gold link-underline w-fit"
+                  >
+                    Read the full study
+                  </a>
+                ) : (
+                  <span className="font-label text-xs uppercase tracking-[0.12em] text-stone/50 w-fit">
+                    Available on request
+                  </span>
+                )}
               </div>
             </Reveal>
           ))}

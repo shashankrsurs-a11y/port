@@ -5,7 +5,7 @@ import { production } from "../data/content";
 export function Production() {
   return (
     <Section id="production" eyebrow="Production" title="Before the sets, the spreadsheets." alt>
-      <div className="grid md:grid-cols-3 gap-10 md:gap-8">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
         {production.map((p, i) => (
           <Reveal key={p.org} delay={i * 0.1}>
             <div className="border-t border-gold pt-6 h-full flex flex-col">
